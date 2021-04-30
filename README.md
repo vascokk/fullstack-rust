@@ -2,7 +2,7 @@
 
 # Look Ma, No JavaScript !!! 
 
-A pet-project (implementation of the "Connect 5" game), I used as a learning tool.
+My very first Rust project (implementation of the "Connect 5" game), I used as a learning tool.
 
 ![img.png](img.png)
 
