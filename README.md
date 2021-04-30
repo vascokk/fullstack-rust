@@ -10,7 +10,7 @@ My goal was to create some sort of a "reference implementation" of a Fullstack R
 Here you can find how to:
 ### Client:
 - build Web client in Rust, without a single line of JavaScript, using  [Yew](https://github.com/yewstack/yew) WebAssembly framework
-- use [yew-router](https://github.com/yewstack/yew/tree/master/packages/yew-router) for page navigation
+- use [yew-router](https://github.com/yewstack/yew/tree/master/packages/yew-router) for navigation between pages
 - use multithreading components, communicating by "message passing" with Yew Agents
 - use Yew StorageService to keep session data
 - utilise a CSS framework ([Bulma](https://bulma.io))
