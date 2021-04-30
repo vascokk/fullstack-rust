@@ -2,16 +2,17 @@
 
 # Look Ma, No JavaScript !!! 
 
-My very first Rust project (implementation of the "Connect 5" game), I used as a learning tool.
-
 ![img.png](img.png)
 
-You can find (and eventually - learn, if you are not there yet) how to:
+My very first Rust project (implementation of the "Connect 5" game), I used as a learning tool.
+
+My goal was to create some sort of a "reference implementation" of a Fullstack Rust application. Hopefully you will find it useful :).
+Here you can find how to:
 ### Client:
 - build Web client in Rust, without a single line of JavaScript, using  [Yew](https://github.com/yewstack/yew) WebAssembly framework
 - use [yew-router](https://github.com/yewstack/yew/tree/master/packages/yew-router) for page navigation
-- multithreading components and message passing with Yew Agents
-- StorageService to keep session data
+- use multithreading components, communicating by "message passing" with Yew Agents
+- use Yew StorageService to keep session data
 - utilise a CSS framework ([Bulma](https://bulma.io))
 
 ### Server:
@@ -20,3 +21,6 @@ You can find (and eventually - learn, if you are not there yet) how to:
 - Session cookies
 - Integration testing for the REST API
 - Mocking functions (db calls) in unit tests 
+
+
+There are still few things that need to be improved/fixed, but the project served it's purpose (for me, at least) and is useful as it is, so I'll probably won't be fixing them. Feel free, however, to do so and may be create some PR(s) :)
