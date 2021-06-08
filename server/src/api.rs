@@ -141,9 +141,7 @@ pub async fn board(session: Session, req: HttpRequest) -> Result<HttpResponse, E
 
         let res = db::get_board(&session_id, conn.deref());
         match res {
-            Ok(board_str) => {
-                Ok(HttpResponse::Ok().body(board_str))
-            }
+            Ok(board_str) => Ok(HttpResponse::Ok().body(board_str)),
             _ => Err(Error::from(
                 HttpResponse::InternalServerError()
                     .body(format!("Can't find game with session id {}", session_id)),
@@ -166,9 +164,7 @@ pub async fn game_state(session: Session, req: HttpRequest) -> Result<HttpRespon
         // let id = session_id.into_inner();
         let res = db::get_game_state(&session_id, conn.deref());
         match res {
-            Ok(game_state) => {
-                Ok(HttpResponse::Ok().body(json!(game_state)))
-            }
+            Ok(game_state) => Ok(HttpResponse::Ok().body(json!(game_state))),
             _ => Err(Error::from(
                 HttpResponse::InternalServerError()
                     .body(format!("Can't find game with session id {}", session_id)),

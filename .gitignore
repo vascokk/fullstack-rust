@@ -18,3 +18,6 @@ Cargo.lock
 client/dist
 .idea
 server/connect5.db-wal
+.vscode
+connect5.code-workspace
+
