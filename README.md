@@ -25,6 +25,14 @@ Here you can find how to:
 
 #### Usage:
 
+Install trunk and build the client:
+```
+cd client
+cargo install trunk wasm-bindgen-cli
+trunk build -d ../server/static/ 
+```
+
+Start the server: 
 ``` bash
 cd server
 cargo run --package connect5-rust --bin connect5-rust
