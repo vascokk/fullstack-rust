@@ -23,4 +23,13 @@ Here you can find how to:
 - Mocking functions (db calls) in unit tests 
 
 
+####Usage:
+
+``` bash
+cd server
+cargo run --package connect5-rust --bin connect5-rust
+```
+Open http://127.0.0.1:8088/ in your browser.
+
+
 There are still few things that need to be improved/fixed, but the project served it's purpose (for me, at least) and is useful as it is, so I'll probably won't be fixing them. Feel free, however, to do so and may be create some PR(s) :)
