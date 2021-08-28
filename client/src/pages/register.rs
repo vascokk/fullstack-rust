@@ -2,8 +2,8 @@ use yew::format::Json;
 use yew::prelude::*;
 use yew_router::agent::{RouteAgentDispatcher, RouteRequest};
 use yew_router::prelude::*;
-use yew_services::storage::Area;
-use yew_services::{ConsoleService, DialogService, StorageService};
+use yew::services::storage::Area;
+use yew::services::{ConsoleService, DialogService, StorageService};
 
 use crate::models::{User, USER_INFO_KEY};
 use crate::rest_helper;

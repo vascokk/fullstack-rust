@@ -7,8 +7,8 @@ use std::{
 use serde::{Deserialize, Serialize};
 use yew::agent::{Agent, AgentLink, HandlerId, Job};
 use yew::format::Json;
-use yew_services::storage::Area;
-use yew_services::{IntervalService, StorageService, Task};
+use yew::services::storage::Area;
+use yew::services::{IntervalService, StorageService, Task};
 
 use crate::models::{ClientState, GameState, User, USER_INFO_KEY};
 use crate::rest_helper;
@@ -104,10 +104,10 @@ impl Agent for GameWorker {
         match msg {
             Msg::InitializeWorker => {
                 self.set_user_id();
-                yew_services::ConsoleService::info("Game State Initialized!");
+                yew::services::ConsoleService::info("Game State Initialized!");
             }
             Msg::Updating => {
-                yew_services::ConsoleService::info("Updating Game State...");
+                yew::services::ConsoleService::info("Updating Game State...");
 
                 if let Some(_input_handler) = self.input_handler {
                     self.get_game_state();
@@ -116,7 +116,7 @@ impl Agent for GameWorker {
             Msg::MakeMoveResponse(who, fetched_response) => {
                 let msg = match fetched_response {
                     Ok(game_state) => {
-                        yew_services::ConsoleService::info(
+                        yew::services::ConsoleService::info(
                             format!("update::Msg::MakeMoveResponse called: {:#?}", game_state)
                                 .as_str(),
                         );
@@ -130,7 +130,7 @@ impl Agent for GameWorker {
             Msg::GetGameStateResponse(who, fetched_response) => {
                 match fetched_response {
                     Ok(game_state) => {
-                        yew_services::ConsoleService::info(
+                        yew::services::ConsoleService::info(
                             format!("update::Msg::UpdateBoardResponse called: {:#?}", game_state)
                                 .as_str(),
                         );
@@ -161,7 +161,7 @@ impl Agent for GameWorker {
                         self.link.respond(who, msg);
                     }
                     Err(err) => {
-                        yew_services::DialogService::alert(&err.err);
+                        yew::services::DialogService::alert(&err.err);
                     }
                 };
             }
@@ -169,7 +169,7 @@ impl Agent for GameWorker {
     }
 
     fn handle_input(&mut self, msg: Self::Input, who: HandlerId) {
-        yew_services::ConsoleService::info(&format!("Request: {:?}", msg));
+        yew::services::ConsoleService::info(&format!("Request: {:?}", msg));
         self.input_handler = Some(who);
         let link = self.link.clone();
         let future = async move {

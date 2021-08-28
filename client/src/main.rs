@@ -12,13 +12,13 @@ mod rest_helper;
 
 #[derive(Clone, Debug, Switch)]
 pub enum AppRoute {
-    #[at = "/about/"]
+    #[to = "/about/"]
     About,
-    #[at = "/game/"]
+    #[to = "/game/"]
     Game,
-    #[at = "/page-not-found"]
+    #[to = "/page-not-found"]
     PageNotFound(Permissive<String>),
-    #[at = "/"]
+    #[to = "/"]
     Register,
 }
 pub type AppRouter = Router<AppRoute>;

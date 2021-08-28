@@ -3,8 +3,8 @@ use crate::pages::game_state_worker::{ClientRequest, GameWorker, ServerResponse}
 use std::cmp;
 use yew::format::Json;
 use yew::prelude::*;
-use yew_services::storage::Area;
-use yew_services::{ConsoleService, DialogService, StorageService};
+use yew::services::storage::Area;
+use yew::services::{ConsoleService, DialogService, StorageService};
 
 // const ROWS: u32 = 6; //TODO: make these parameters
 const COLUMNS: u32 = 9;
@@ -108,7 +108,7 @@ impl Component for Game {
                     </table>
                 </div>
                 <div>{format!("Selected column:{}", Game::print_selected_column(self.selected_column)) }</div>
-                <button onclick=self.link.callback(|_| Msg::MakeMoveClick)>{ "Make Move" }</button>
+                <button onclick={self.link.callback(|_| Msg::MakeMoveClick)}>{ "Make Move" }</button>
             </div>
         }
     }
@@ -158,10 +158,10 @@ impl Game {
 
     fn view_square(&self, row: u32, column: u32) -> Html {
         html! {
-            <td class=self.get_square_class(row, column)
-                onclick=self.link.callback(move |_| Msg::SelectColumn(column))
-                onmouseover=self.link.callback(move |_| Msg::MouseOver(column))
-                onmouseout=self.link.callback(move |_| Msg::MouseOut(column))>
+            <td class={self.get_square_class(row, column)}
+                onclick={self.link.callback(move |_| Msg::SelectColumn(column))}
+                onmouseover={self.link.callback(move |_| Msg::MouseOver(column))}
+                onmouseout={self.link.callback(move |_| Msg::MouseOut(column))}>
             </td>
         }
     }

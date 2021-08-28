@@ -12,18 +12,18 @@ edition = "2018"
 # client deps
 instant = { version = "0.1", features = ["wasm-bindgen"] }
 getrandom = { version = "0.2", features = ["js"] }
-rand = { version = "0.7", features = ["small_rng", "wasm-bindgen"] }
+rand = { version = "0.8.4", features = ["small_rng"] }
 wasm-logger = "0.2"
 
-yew = { git = "https://github.com/yewstack/yew.git", branch = "master" }
-yew-macro = { git = "https://github.com/yewstack/yew.git", branch = "master" }
-yew-services = {  git = "https://github.com/yewstack/yew.git", branch = "master" }
-yew-router = { git = "https://github.com/yewstack/yew.git", branch = "master" }
-yew-router-macro = { git = "https://github.com/yewstack/yew.git", branch = "master" }
+#yew = { git = "https://github.com/yewstack/yew.git", branch = "master" }
+yew = "0.18.0"
+yew-macro = "0.18.0"
+yew-router = "0.15.0"
+yew-router-macro = "0.15.0"
 
-yewtil = "0.3.2"
+yewtil = "0.4.0"
 wasm-bindgen-futures = "0.4.23"
-wasm-bindgen = { version = "0.2.73", features = ["serde-serialize"]  }
+wasm-bindgen = { version = "0.2.76", features = ["serde-serialize"]  }
 
 serde = "1.0.111"
 serde_json = "1.0.53"
